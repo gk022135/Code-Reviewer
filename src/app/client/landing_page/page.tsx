@@ -23,7 +23,7 @@ export default function CodeReviewerLanding() {
   const features = [
     {
       icon: Upload,
-      title: "Code Upload & Parsing",
+      title: "Code Upload and Parsing",
       description: "Support for multiple languages including Python, JavaScript, Java, C++, and more. Drag, drop, and analyze instantly.",
       color: "from-blue-500 to-cyan-500",
       url: "/client/tools/upload"
@@ -31,7 +31,7 @@ export default function CodeReviewerLanding() {
     {
       icon: Brain,
       title: "AI-Powered Review",
-      description: "Context-aware analysis using advanced LLM APIs. Get targeted suggestions that understand your code's intent.",
+      description: "Context-aware analysis using advanced LLM APIs. Get targeted suggestions that understand your codes intent.",
       color: "from-purple-500 to-pink-500",
       url: "client/tools/ai-power-review"
     },
@@ -264,10 +264,11 @@ export default function CodeReviewerLanding() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-800 text-center text-gray-500">
-            <p>{`Welcome to the "Best App" in the world`}</p>
+            <p>Welcome to the &quot;Best App&quot; in the world</p>
           </div>
         </div>
       </footer>
+
     </div>
   );
 }

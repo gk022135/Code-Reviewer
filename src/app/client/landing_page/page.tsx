@@ -33,7 +33,7 @@ export default function CodeReviewerLanding() {
       title: "AI-Powered Review",
       description: "Context-aware analysis using advanced LLM APIs. Get targeted suggestions that understand your code's intent.",
       color: "from-purple-500 to-pink-500",
-      url : "client/tools/ai-power-review"
+      url: "client/tools/ai-power-review"
     },
     {
       icon: BarChart3,
@@ -264,7 +264,7 @@ export default function CodeReviewerLanding() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-800 text-center text-gray-500">
-            <p>&copy; 2025 CodeReviewer. All rights reserved.</p>
+            <p>{`Welcome to the "Best App" in the world`}</p>
           </div>
         </div>
       </footer>

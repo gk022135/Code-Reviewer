@@ -26,7 +26,7 @@ const AIReview: React.FC<AIReviewProps> = ({ className = '' }) => {
     }
     return total;
   }`);
-  
+
   const mockSuggestions: ReviewSuggestion[] = [
     {
       id: '1',

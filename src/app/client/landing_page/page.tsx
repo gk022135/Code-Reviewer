@@ -1,18 +1,20 @@
 "use client"
 import { useState } from 'react';
-import { 
-  Code2, 
-  Upload, 
-  Brain, 
-  BarChart3, 
-  CheckCircle, 
-  GitCompare, 
-  Zap, 
-  Star, 
+import Link from 'next/link';
+import {
+  Code2,
+  Upload,
+  Brain,
+  BarChart3,
+  CheckCircle,
+  GitCompare,
+  Zap,
+  Star,
   ArrowRight,
   Play,
   Menu,
-  X
+  X,
+  ArrowBigRight
 } from 'lucide-react';
 
 export default function CodeReviewerLanding() {
@@ -21,33 +23,38 @@ export default function CodeReviewerLanding() {
   const features = [
     {
       icon: Upload,
-      title: "Code Upload & Parsing",
+      title: "Code Upload and Parsing",
       description: "Support for multiple languages including Python, JavaScript, Java, C++, and more. Drag, drop, and analyze instantly.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      url: "/client/tools/upload"
     },
     {
       icon: Brain,
       title: "AI-Powered Review",
-      description: "Context-aware analysis using advanced LLM APIs. Get targeted suggestions that understand your code's intent.",
-      color: "from-purple-500 to-pink-500"
+      description: "Context-aware analysis using advanced LLM APIs. Get targeted suggestions that understand your codes intent.",
+      color: "from-purple-500 to-pink-500",
+      url: "client/tools/ai-power-review"
     },
     {
       icon: BarChart3,
       title: "Complexity Analysis",
       description: "Automatically calculate time and space complexity for functions. Identify performance bottlenecks before they become problems.",
-      color: "from-green-500 to-teal-500"
+      color: "from-green-500 to-teal-500",
+      url: "/client/tools/analyiser"
     },
     {
       icon: CheckCircle,
       title: "Best Practice Checker",
       description: "Validate against industry standards like PEP8, ESLint, and more. Maintain consistent, professional code quality.",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      url: "client/tools/best-practice"
     },
     {
       icon: GitCompare,
       title: "Version Comparison",
       description: "Compare code versions side-by-side with intelligent diff analysis. Track improvements and changes over time.",
-      color: "from-indigo-500 to-purple-500"
+      color: "from-indigo-500 to-purple-500",
+      url: "client/tools/version-ctrl"
     }
   ];
 
@@ -56,7 +63,7 @@ export default function CodeReviewerLanding() {
       name: "Sarah Chen",
       role: "Senior Developer at TechCorp",
       quote: "This tool caught performance issues I completely missed. It's like having a senior developer review every line of code.",
-      avatar: "SC"
+      avatar: "SC",
     },
     {
       name: "Marcus Rodriguez",
@@ -75,48 +82,7 @@ export default function CodeReviewerLanding() {
   return (
     <div className="min-h-screen bg-black">
       {/* Navigation */}
-      <nav className="relative z-50 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
-              <Code2 className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              CodeReviewer
-            </span>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</a>
-            <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Reviews</a>
-            <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
-              Get Started
-            </button>
-          </div>
 
-          <button 
-            className="md:hidden text-white"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-slate-800/95 backdrop-blur-md p-6 md:hidden">
-            <div className="flex flex-col space-y-4">
-              <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</a>
-              <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Reviews</a>
-              <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-full">
-                Get Started
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
 
       {/* Hero Section */}
       <section className="px-6 py-20 relative overflow-hidden">
@@ -124,13 +90,13 @@ export default function CodeReviewerLanding() {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-blue-500/20">
             <Zap className="w-4 h-4 text-yellow-400" />
             <span className="text-sm text-gray-300">AI-Powered Code Analysis</span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent leading-tight">
             Your Smart
             <br />
@@ -138,12 +104,12 @@ export default function CodeReviewerLanding() {
               Peer Reviewer
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Upload your code, find bugs, get optimization suggestions, and understand complexity — 
+            Upload your code, find bugs, get optimization suggestions, and understand complexity —
             all powered by advanced AI that actually understands your code.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <button className="group bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center space-x-2">
               <span>Try It Free</span>
@@ -170,15 +136,29 @@ export default function CodeReviewerLanding() {
               Everything you need for comprehensive code analysis and optimization
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur" 
-                     style={{background: `linear-gradient(135deg, ${feature.color.split(' ')[1]}, ${feature.color.split(' ')[3]})`}}></div>
+                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur"
+                  style={{ background: `linear-gradient(135deg, ${feature.color.split(' ')[1]}, ${feature.color.split(' ')[3]})` }}></div>
                 <div className="relative bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 hover:border-slate-600 transition-all duration-300 h-full">
-                  <div className={`w-14 h-14 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6`}>
-                    <feature.icon className="w-7 h-7 text-white" />
+                  <div className='flex justify-between'>
+                    <div className={`w-14 h-14 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6`}>
+                      <feature.icon className="w-7 h-7 text-white" />
+                    </div>
+
+                    <div
+                      className={`w-8 h-8 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6 right-0`}
+                    >
+                      {feature.url ? (
+                        <Link href={feature.url}>
+                          <ArrowBigRight className="text-white cursor-pointer hover:text-blue-300 transition-colors" />
+                        </Link>
+                      ) : (
+                        <ArrowBigRight className="text-white" />
+                      )}
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
                   <p className="text-gray-400 leading-relaxed">{feature.description}</p>
@@ -198,7 +178,7 @@ export default function CodeReviewerLanding() {
             </h2>
             <p className="text-xl text-gray-400">Simple, fast, and incredibly powerful</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: "01", title: "Upload Your Code", desc: "Drag and drop files or paste code directly. We support 10+ programming languages." },
@@ -226,7 +206,7 @@ export default function CodeReviewerLanding() {
             </h2>
             <p className="text-xl text-gray-400">See what developers are saying about CodeReviewer</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700">
@@ -284,10 +264,11 @@ export default function CodeReviewerLanding() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-800 text-center text-gray-500">
-            <p>&copy; 2025 CodeReviewer. All rights reserved.</p>
+            <p>Welcome to the &quot;Best App&quot; in the world</p>
           </div>
         </div>
       </footer>
+
     </div>
   );
 }

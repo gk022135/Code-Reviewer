@@ -20,13 +20,13 @@ const AIReview: React.FC<AIReviewProps> = ({ className = '' }) => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [codeInput, setCodeInput] = useState(`function calculateTotal(items) {
-  let total = 0;
-  for (let i = 0; i < items.length; i++) {
-    total += items[i].price * items[i].quantity;
-  }
-  return total;
-}`);
-
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].price * items[i].quantity;
+    }
+    return total;
+  }`);
+  
   const mockSuggestions: ReviewSuggestion[] = [
     {
       id: '1',
@@ -56,10 +56,10 @@ const AIReview: React.FC<AIReviewProps> = ({ className = '' }) => {
   const handleAnalyze = async () => {
     setIsAnalyzing(true);
     setShowResults(false);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setIsAnalyzing(false);
     setShowResults(true);
   };
@@ -180,11 +180,10 @@ const AIReview: React.FC<AIReviewProps> = ({ className = '' }) => {
                           {suggestion.type.replace('-', ' ')}
                         </span>
                         <span className="text-xs text-gray-300">•</span>
-                        <span className={`text-xs font-medium ${
-                          suggestion.severity === 'high' ? 'text-red-600' :
+                        <span className={`text-xs font-medium ${suggestion.severity === 'high' ? 'text-red-600' :
                           suggestion.severity === 'medium' ? 'text-orange-600' :
-                          'text-blue-600'
-                        }`}>
+                            'text-blue-600'
+                          }`}>
                           {suggestion.severity.toUpperCase()} PRIORITY
                         </span>
                       </div>

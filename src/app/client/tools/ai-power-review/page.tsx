@@ -12,11 +12,7 @@ interface ReviewSuggestion {
   lineNumber?: number;
 }
 
-interface AIReviewProps {
-  className?: string;
-}
-
-const AIReview: React.FC<AIReviewProps> = ({ className = '' }) => {
+const AIReview = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [codeInput, setCodeInput] = useState(`function calculateTotal(items) {
@@ -84,7 +80,7 @@ const AIReview: React.FC<AIReviewProps> = ({ className = '' }) => {
   };
 
   return (
-    <div className={`mt-20 mx-auto p-6 h-screen w-full bg-gradient-to-r from-gray-900 to-black text-blue-400 ${className}`}>
+    <div className="mt-20 mx-auto p-6 h-screen w-full bg-gradient-to-r from-gray-900 to-black text-blue-400">
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
